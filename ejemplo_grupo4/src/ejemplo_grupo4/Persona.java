@@ -1,3 +1,5 @@
+package ejemplo_grupo4;
+
 
 import java.util.Date;
 
@@ -84,6 +86,26 @@ public class Persona {
     public void setEstado_civil(String estado_civil) {
         this.estado_civil = estado_civil;
     }
+    
+    /**
+     * Metodo para escribir el nombre de la persona
+     * @return
+     * Retorna la edad de la persona
+     */
+    public long obtenerEdad(){
+        Date hoy = new Date();
+        long days = (hoy.getTime()-this.fecha_nacimiento.getTime())/
+                (1000*60*60*24);
+        System.out.println("los dias son :"+days/365);
+        return days/365;
+        
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "ID=" + ID + ", nombre=" + nombre + ", apellido=" + apellido + ", fecha_nacimiento=" + fecha_nacimiento + ", estado_civil=" + estado_civil + '}';
+    }
+    
     
     
     
